@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="">
+        <label for="idSalario">Informe o salario bruto</label><br>
+        <input type="number" name="nmNumero" id="idSalario">
+        <br><br>
+
+        <output id="idOut"></output>
+        <br><br>
+        <input type="button" value="Enviar" onclick="testarNumero()">
+    </form>
+
+    <script>zz
+        function testarNumero(){
+         var Salario = parseFloat(document.getElementById("idSalario").value)
+         var out = document.getElementById("idOut")
+         
+
+         if(Salario <= 600.00){
+            out.value = "Não tem desconto de INSS"}
+         else if(Salario > 600.00 && Salario <= 1200.00){
+            out.value = "Valor do INSS será de  R$ " +  Salario / 4}    
+         else if(Salario > 1200.00 && Salario <= 2000.00){
+            out.value = "Valor do INSS será de R$ " + Salario * 0.3}
+         else if(Salario > 2000.00){
+            out.value = "Valor do INSS será de R$ " + Salario * 0.35}
+        
+        }
+
+        
+    </script>
+
+    
+</body>
+</html>

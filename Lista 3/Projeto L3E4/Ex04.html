@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="action">
+     <label for="idNum">Digite um número</label><br>
+     <input type="number" name="nmNumero" id="idNum">
+     <br><br>
+
+    <output id="idOut"></output>
+    <br><br>
+
+    <input type="button" value="Enviar" onclick="testarNumero()">
+
+</form>
+
+<script>
+    function testarNumero(){
+        var num = Number(document.getElementById("idNum").value)
+        var out = document.getElementById("idOut")
+
+        
+        if(num > 30 && num < 90){
+        out.value = "O numero esta no intervalo entre 30 a 90"}
+        else{
+        out.value = "O numero não esta no intervalo de 30 a 90"}
+            
+        }
+        
+
+
+    
+</script>
+</body>
+</html>

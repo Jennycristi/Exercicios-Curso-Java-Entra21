@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="">
+        <label for="idNum1">Digite o primeiro número</label><br>
+        <input type="number" name="nmNumero" id="idNum1">
+        <br><br>
+
+        <label for="idNum2">Digite o segundo número</label><br>
+        <input type="number" name="nmNumero" id="idNum2">
+        <br><br>
+
+        <output id="idOut">Resultado: </output>
+        <br><br>
+        <input type="button" value="Somar" onclick="testarNumero()">
+    </form>
+
+    <script>
+      function testarNumero(){
+        var num1 = Number(document.getElementById("idNum1").value)
+        var num2 = Number(document.getElementById("idNum2").value)
+        var out = document.getElementById("idOut")
+        
+
+        if(num1 + num2){
+          out.value = "A soma dos números " +  num1 + num2
+
+        }        
+
+        }
+        
+    </script>
+    
+
+    
+</body>
+</html>

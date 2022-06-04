@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <output id="idResul"></output>
+    <br><br>
+    
+</body>
+<script>
+
+    var tempetura = parseFloat(prompt("Informe a temperatura: "))
+    var textoPrompt = "Informe o tipo de conversao CK | FC | FK | KC | KF"
+    var escolha = prompt(textoPrompt)
+    var resul = document.getElementById("idResul")
+    var temperaturaFinal
+
+     switch (escolha){
+      case "CK":
+      temperaturaFinal = (tempetura + 273)
+      document.getElementById("idResul").value = "Conversão Celsius para Kelvin: " + temperaturaFinal
+      break
+
+      case "FC":
+      temperaturaFinal = (tempetura - 32) / 1.8
+      document.getElementById("idResul").value = "Conversão Fahrenheit para Celsius: " + temperaturaFinal
+      break
+    
+      case "FK":
+      temperaturaFinal = (tempetura - 32) * 5/9 + 273
+      document.getElementById("idResul").value = "Conversão Fahrenheit para Kelvin: " + temperaturaFinal
+      break
+    
+      case "KC":
+      temperaturaFinal = (tempetura - 273) 
+      document.getElementById("idResul").value = "Conversão Kelvin para Celsius: " + temperaturaFinal
+      break
+      break
+    
+      case "KF":
+      temperaturaFinal = (tempetura - 273) * 1,8 + 32
+
+      document.getElementById("idResul").value = "Conversão Kelvin para Fahrenheit: " + temperaturaFinal
+      break}
+
+      
+    
+
+
+</script>
+</html>

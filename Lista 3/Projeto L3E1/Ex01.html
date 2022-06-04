@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="">
+        <label for="idNum1">Digite um número</label><br>
+        <input type="number" name="nmNumero" id="idNum1">
+        <br><br>
+        <label for="idNum2">Digite outro número</label><br>
+        <input type="number" name="nmNumero" id="idNum2">
+        <br><br>
+
+        <output id="idResul"></output>
+        <br><br>
+        <input type="button" value="Enviar" onclick="testarNumero()">
+    </form>
+
+    <script>
+        function testarNumero(){
+            var num1 = Number(document.getElementById("idNum1").value)
+            var num2 = Number(document.getElementById("idNum2").value)
+            var resul = document.getElementById("idResul")
+            
+           if (num1 > num2){
+               resul.value = "O número " + num1 + "é maior que o número " + num2}
+               else{
+                   resul.value = "O número " + num2 + " é maior que o número " + num1
+               }
+            
+
+            }
+            
+
+    </script>
+
+
+    
+</body>
+</html>
+
+

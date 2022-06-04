@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <label for="idNum1">Primeiro Numero</label><br>
+    <input type="number" id="idNum1" name="nmNum1">
+    <br><br>
+
+    <label for="idNum2">Segundo Numero</label><br>
+    <input type="number" id="idNum2" name="nmNum2">
+    <br><br>
+
+    <label for="idResul">resultado</label><br>
+    <input type="text" id="idResul" name="nmResul">
+    <br><br>
+
+
+    <button type="button" onclick="somar()">Somar</button>
+
+    <script>
+        function somar(){
+            var num1 = document.getElementById("idNum1").value
+            var num2 = document.getElementById("idNum2").value
+            
+
+            var resultado = Number(num1) + Number(num2)
+
+            document.getElementById("idResul").value = resultado
+
+        }
+    </script>
+
+    
+
+      
+
+
+    
+   
+    
+</body>
+
+<script>
+
+        
+            var num1 = 5
+            var num2 = 5
+            var resultado
+
+            resultado = num1 + num2  
+            console.log("Adição: " + resultado);
+  
+
+</script>
+</html>
+
+
