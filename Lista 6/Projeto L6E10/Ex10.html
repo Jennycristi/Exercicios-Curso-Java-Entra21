@@ -1,22 +1,43 @@
 <!DOCTYPE html>
-<html>
- <head>
-   <title>Curso JavaScript Progressivo</title>
-       Numero:<input id="num" type="number"> <br />
-    <button onclick="paridade()">Resposta</button><br />
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
 
-    Resposta: <div id='resposta' style='display:inline'></div>
+   <label for="idNum">Digite um número</label>
+   <input type="number" name="nmNum" id="idNum" min="0">
+   <br><br>
+   <input type="button" value="Sortear" onclick="sortear()">
+   <input type="button" value="Relatorio" onclick="relatorio()">
+   <br><br>
+   <output id="idResul">Resultado: </output>
+   <br>
+   <output id="idOutP"></output>
+   
+   
+</body>
 
-    <script type="text/javascript">
-   function paridade(){
-    var num = parseInt(document.getElementById("num").value);
-       var resposta = document.getElementById('resposta');
-        
-          if (num%2 == 0)
-           resposta.innerHTML = "Par";
-          else
-           resposta.innerHTML = "Ímpar";
+<script>
+   let num= []
+   let numChave = ""
+   let resultado 
+
+   function sortear(){
+
+   for (let i = 0; i < 30; i++) {
+   let num = parseInt(Math.random() * 15 )
+   // resultado = document.getElementById("idResul")
+   console.log(num)
+   //resultado + num
+   //resultado = document.getElementById("idResul").value + num
    }
-    </script>
- </head>
+ }
+
+   
+
+</script>
 </html>

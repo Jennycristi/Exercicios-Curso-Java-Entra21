@@ -1,70 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversor de moedas</title>
-</head>
-<body>
-
-    <output id="idResul"></output>
-    <br><br>
-
-    <!-- 1 Real brasileiro igual a
- 0,21 Dólar americano
-
- 1 Real brasileiro igual a
- 0,20 Euro
-
- 1 Real brasileiro igual a
-0,17 Libra esterlina
-
-1 Real brasileiro igual a
-0,27 Dólar canadense-->
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Conversor de moedas</title>
+    </head>
+    <body>
+        
+        <form action="">
 
 
-    
-</body>
-<script>
+            <p>Escolha a moeda</p>
 
-    var valor = parseFloat(prompt("Informe a cotação em Real "))
-    var textoPrompt = "Informe a moeda de conversao  | Dolar Americano | Euro | Libra esterlina | Dolar Canadense"
-    var escolha = prompt(textoPrompt)
-    var resul = document.getElementById("idResul") 
-    var cotacao = 0
+              <input type="radio" id="idReal" name="nmMoedaEntrada">
+              <label for="idReal">Real</label><br>
 
-     switch (escolha){
-      case "Dolar Americano":
-      cotacao = (valor * 0,21)
-      document.getElementById("idResul").value = "Conversão Real para Dólar Americano " + cotacao
-      breaks
+              <input type="radio" id="idDolarAmericano" name="nmMoedaEntrada">
+              <label for="idDolarAmericano">Dólar Americano</label><br>
 
-      case "Euro":
-      cotacao = (valor * 0,20)
-      document.getElementById("idResul").value = "Conversão Real para Euro: " + cotacao
-      break
-    
-      case "Libra Esterlina":
-      cotacao = (valor * 0,17)
-      document.getElementById("idResul").value = "Conversão Real para Libra Esterlina: " + cotacao
-      break
-    
-      case "Dolar Canadense":
-      cotacao = (valor * 0,27)
-      document.getElementById("idResul").value = "Conversão Real para Dolar Canadense: " + cotacao
-      break
+              <input type="radio" id="idEuro" name="nmMoedaEntrada">
+              <label for="idEuro">Euro</label><br>
 
-    
-      
+              <input type="radio" id="idLibra" name="nmMoedaEntrada">
+              <label for="idLibra">Libra esterlina</label><br>
+
+              <input type="radio" id="idDolarCanadense" name="nmMoedaEntrada">
+              <label for="idDolarCanadense">Dólar Canadense</label>
+              <br><br>
+
+              <label for="idCotacao">Digite a cotação</label>
+              <input type="number" name="nmCotacao" id="idCotacao" min="0">
+              <br><br>
+             
+
+            <p>Escolha a moeda para conversão</p>
+        
+             
+            <input type="radio" id="idReal2" name="nmMoedaSaida">
+            <label for="idReal">Real</label><br>
+
+            <input type="radio" id="idDolarAmericano2" name="nmMoedaSaida">
+            <label for="idDolarAmericano">Dólar Americano</label><br>
+
+            <input type="radio" id="idEuro2" name="nmMoedaSaida">
+            <label for="idEuro">Euro</label><br>
+
+            <input type="radio" id="idLibra2" name="nmMoedaSaida">
+            <label for="idLibra">Libra esterlina</label><br>
+
+            <input type="radio" id="idDolarCanadense2" name="nmMoedaSaida">
+            <label for="idDolarCanadense">Dólar Canadense</label>
+            <br><br>
 
 
-      
-      }
-
-      
+            <input type="button" value="Converter" onclick="converter()">
+            <br><br>
+           
     
 
+        </form>
 
-</script>
+        <script>
+            
+
+            function converter(){
+                
+                let cotacao = Number(document.getElementById("idCotacao").value)
+                let real = document.getElementById("idReal").checked
+                let dolarAmeriacano = document.getElementById("idDolarAmericano").checked
+                let euro = document.getElementById("idEuro").checked
+                let libra = document.getElementById("idLibra").checked
+                let dolarCanadense = document.getElementById("idDolarCanadense").checked
+ 
+                let realSaida = document.getElementById("idReal2").checked
+                let dolarAmeriacanoSaida = document.getElementById("idDolarAmericano2").checked
+                let euroSaida = document.getElementById("idEuro2").checked
+                let libraSaida = document.getElementById("idLibra2").checked
+                let dolarCanadenseSaida = document.getElementById("idDolarCanadense2").checked
+                let resultado = document.getElementById("idResul")
+                let valorConvertido = " "
+
+                if(real == true && realSaida == true){
+                 valorConvertido = cotacao * 0
+                 document.write("Não tem conversão = " + valorConvertido)
+                }
+                else if(real == true && dolarAmeriacanoSaida == true){
+                 valorConvertido = cotacao * 0.21
+                 document.write("Moeda Real convertida para Dólar Americano: " + valorConvertido)
+                }
+                else if(real == true && euroSaida == true){
+                 valorConvertido = cotacao * 0.20
+                 document.write("Moeda Real convertida para Euro: " + valorConvertido)
+                }
+                else if(real == true && libraSaida == true){
+                 valorConvertido = cotacao * 0.17
+                 document.write("Moeda Real convertida para Libra: " + valorConvertido)
+                }
+                else if(real == true && dolarCanadenseSaida == true){
+                 valorConvertido = cotacao * 0.26
+                 document.write("Moeda Real convertida para Dólar Canadense: " + valorConvertido)
+                }
+                else if(dolarAmeriacano == true && realSaida == true){
+                 valorConvertido = cotacao * 4.77
+                 document.write("Moeda Dólar Americano para Real: " + valorConvertido)
+                }
+                 else if(dolarAmeriacano == true && dolarAmeriacanoSaida == true){
+                 valorConvertido = cotacao * 0
+                 document.write("Não tem conversão = " + valorConvertido)
+                }
+                else if(dolarAmeriacano == true && euroSaida == true){
+                 valorConvertido = cotacao * 0.93
+                 document.write("Moeda Dólar Americano para Euro: " + valorConvertido)
+                }
+                else if(dolarAmeriacano == true && libraSaida == true){
+                 valorConvertido = cotacao * 0.80
+                 document.write("Moeda Dólar Americano para Libra: " + valorConvertido)
+                }
+                else if(dolarAmeriacano == true && dolarCanadenseSaida == true){
+                 valorConvertido = cotacao * 1.26
+                 document.write("Moeda Dolar Americano para Dólar Canadense: " + valorConvertido)
+                }
+                else if(euro == true && realSaida == true){
+                 valorConvertido = cotacao * 5.12
+                 document.write("Moeda Euro para Real: " + valorConvertido)
+                }
+                else if(euro == true && dolarAmeriacanoSaida== true){
+                 valorConvertido = cotacao * 1.07
+                 document.write("Moeda Euro para Dólar Americano: " + valorConvertido)
+                }
+                else if(euro == true && euroSaida == true){
+                 valorConvertido = cotacao * 0
+                 document.write("Não tem conversão = " + valorConvertido)
+                }
+                else if(euro == true && libraSaida == true){
+                 valorConvertido = cotacao * 0.86
+                 document.write("Moeda Euro para Libra: " + valorConvertido)
+                }
+                else if(euro == true && dolarCanadenseSaida == true){
+                 valorConvertido = cotacao * 1.35
+                 document.write("Moeda Euro para Dólar Canadense: " + valorConvertido)
+                }
+                else if(libra == true && realSaida == true){
+                 valorConvertido = cotacao * 5.96
+                 document.write("Moeda Libra para Real: " + valorConvertido)
+                }
+                else if(libra == true && dolarAmeriacanoSaida == true){
+                 valorConvertido = cotacao * 1.25
+                 document.write("Moeda Libra para Dólar Americano: " + valorConvertido)
+                }
+                else if(libra == true && euroSaida == true){
+                 valorConvertido = cotacao * 1.16
+                 document.write("Moeda Libra para Euro" + valorConvertido)
+                }
+                else if(libra == true && libraSaida == true){
+                 valorConvertido = cotacao * 0
+                 document.write("Não tem conversão =" + valorConvertido)
+                }
+                else if(libra == true && dolarCanadenseSaida== true){
+                 valorConvertido = cotacao * 1.58
+                 document.write("Moeda Libra para Dólar Canadense: " + valorConvertido)
+                }
+                else if(dolarCanadense == true && realSaida == true){
+                 valorConvertido = cotacao * 3.79
+                 document.write("Moeda Dólar Canadense para Real: " + valorConvertido)
+                }
+                else if(dolarCanadense == true && dolarAmeriacanoSaida == true){
+                 valorConvertido = cotacao * 0.79
+                 document.write("Moeda Dólar Canadense para Dólar Americano: " + valorConvertido)
+                }
+                else if(dolarCanadense== true && euroSaida == true){
+                 valorConvertido = cotacao * 0.74
+                 document.write("Moeda Dólar Canadense para Euro: " + valorConvertido)
+                }
+                else if(dolarCanadense == true && libraSaida == true){
+                 valorConvertido = cotacao * 0.64
+                 document.write("Moeda Dólar Canadense para Libra: " + valorConvertido)
+                }
+                else if(dolarCanadense == true && dolarCanadenseSaida == true){
+                 valorConvertido = cotacao * 0
+                 document.write("Não tem conversão = " + valorConvertido)
+                }
+
+
+              
+
+
+
+
+            }
+
+
+              
+
+               
+        </script>
+
+    </body>
 </html>
+

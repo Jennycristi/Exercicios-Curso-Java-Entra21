@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <form action="">
+            <input type="number" id="idNum" placeholder="Número">
+            <br><br>
+            <input type="button" value="Incluir" onclick="incluir()">
+            <input type="button" value="Relatorio" onclick="relatorio()">
+            <br><br>
+            <output id="idOutVetor"></output>
+            <br>
+            <output id="idOutP"></output>
+        </form>
 
-    <form action="">
-        <label for="idNumero">Números</label><br>
-        <input type="number" id="idNumero" name="nmNumero" step="0.01">
-        <br><br>
+        <script>
+            
+            var numeros = []
+            var outVetor = document.getElementById("idOutVetor")
+            var outItens = document.getElementById("idOutItens")
+            outVetor.value = ""
+            outP.value = ""
+
+            function incluir() {
+               numeros.push(Number(document.getElementById("idNum").value))
+               document.getElementById("idNum").value = ""
+            }
+
+            function relatorio() {
+                console.table(numeros)
+                
+                for (let index = 0; index < numeros.length; index++) {
+                    outVetor.value = outVetor.value  + numeros[index] + " ; "
+                    
+                    if (numeros[index] % 2 == 0) {
+                        outP.value = outP.value + index + " ; "
+                    }
+                }
+            }
+
+        </script>
         
-        <input type="button" value="Processar" onclick="processar()">
-        <br><br>
-
-
-        <output id="idOut"></output>
-
-    </form>
-    
-</body>
-<script>
-
-    var numeros = []
-    var numerosPares
-    var textoCont = ""
-
-     function processar(){
-    
-       var numeros = parseInt(document.getElementById("idNumero").value);
-       var resposta = document.getElementById('idOut');
-          
-         for (var numeros = 0; ind > 0; ind++) {
-          if (numeros % 2 == 0){
-          textoCont = textoCont + "[" + ind + "] "}
-     }
-    }
-        document.getElementById("idOut").value = "Inicio " + textoCont + " Acabou!"
-        
-
-
-</script>
+    </body>
 </html>
-

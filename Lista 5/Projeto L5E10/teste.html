@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de moedas</title>
+</head>
+<body>
+
+    <output id="idResul"></output>
+    <br><br>
+
+    <!-- 1 Real brasileiro igual a
+ 0,21 Dólar americano
+
+ 1 Real brasileiro igual a
+ 0,20 Euro
+
+ 1 Real brasileiro igual a
+0,17 Libra esterlina
+
+1 Real brasileiro igual a
+0,26 Dólar canadense-->
+
+
+    
+</body>
+<script>
+
+    var valor = parseFloat(prompt("Informe a cotação em Real "))
+    var textoPrompt = "Informe a moeda de conversao  | Dolar Americano | Euro | Libra esterlina | Dolar Canadense"
+    var escolha = prompt(textoPrompt)
+    var resul = document.getElementById("idResul") 
+    var cotacao = 0
+
+     switch (escolha){
+      case "Dolar Americano":
+      cotacao = (valor * 0,21)
+      document.getElementById("idResul").value = "Conversão Real para Dólar Americano " + cotacao
+      breaks
+
+      case "Euro":
+      cotacao = (valor * 0,20)
+      document.getElementById("idResul").value = "Conversão Real para Euro: " + cotacao
+      break
+    
+      case "Libra Esterlina":
+      cotacao = (valor * 0,17)
+      document.getElementById("idResul").value = "Conversão Real para Libra Esterlina: " + cotacao
+      break
+    
+      case "Dolar Canadense":
+      cotacao = (valor * 0,27)
+      document.getElementById("idResul").value = "Conversão Real para Dolar Canadense: " + cotacao
+      break
+
+    
+      
+
+
+      
+      }
+
+      
+    
+
+
+</script>
+</html>
