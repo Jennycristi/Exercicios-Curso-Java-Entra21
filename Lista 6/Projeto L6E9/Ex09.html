@@ -15,16 +15,16 @@
             <br><br>
             <output id="idOutVetor"></output>
             <br>
-            <output id="idOutP"></output>
+            <output id="idOutPares"></output>
         </form>
 
         <script>
             
             var numeros = []
             var outVetor = document.getElementById("idOutVetor")
-            var outItens = document.getElementById("idOutItens")
+            var outPares = document.getElementById("idOutPares")
             outVetor.value = ""
-            outP.value = ""
+            outPares.value = ""
 
             function incluir() {
                numeros.push(Number(document.getElementById("idNum").value))
@@ -38,7 +38,7 @@
                     outVetor.value = outVetor.value  + numeros[index] + " ; "
                     
                     if (numeros[index] % 2 == 0) {
-                        outP.value = outP.value + index + " ; "
+                        outPares.value = outPares.value + index + " ; "
                     }
                 }
             }
@@ -47,3 +47,4 @@
         
     </body>
 </html>
+
