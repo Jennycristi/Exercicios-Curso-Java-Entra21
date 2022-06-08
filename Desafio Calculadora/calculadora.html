@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>calculadora</title>
+
+	<style>
+
+      body{
+		font-family: sans-serif;
+	 }
+
+      #idCalculator{
+		width: 200px;
+        background-image: grey;
+        padding: 20px;
+        border-radius: 5px;
+		background: black;
+        margin: 15px auto;
+        display: grid;
+		grid-template-columns: repeat(4, 1fr);
+        grid-gap: 5px;
+        grid-template-rows: auto repeat(5, 40px);
+        
+	 }
+
+	 #idDisplay{
+		padding: 10px;
+        font-size: 1.4em;
+        text-align: right;
+		background: rgb(208, 208, 208);
+        margin-bottom: 15px;
+        grid-column: 1 / -1;
+ 	}
+       
+    
+
+	 .mais{
+		background-color: rgb(208, 208, 208);
+       
+        
+	 }
+
+     .zero{
+		background-color: rgb(208, 208, 208);
+        
+	 }
+
+	</style>
+
+</head>
+<body>
+
+	<div id="idCalculator">
+		<div id="idDisplay">0</div>
+		
+		<input type="button" class="button" value="7" onclick="incluirDigito('7')">
+        <input type="button" class="button" value="8" onclick="incluirDigito('8')">
+        <input type="button" class="button" value="9" onclick="incluirDigito('9')"> 
+        <input type="button" class="mais" value="+" onclick="iniciarCalculo('+')">
+
+		<input type="button" class="button" value="4" onclick="incluirDigito('4')">
+        <input type="button" class="button" value="5" onclick="incluirDigito('5')">
+        <input type="button" class="button" value="6" onclick="incluirDigito('6')">
+        <input type="button" class="button" value="-" onclick="iniciarCalculo('-')">
+
+		<input type="button" class="button" value="1" onclick="incluirDigito('1')">
+        <input type="button" class="button" value="2" onclick="incluirDigito('2')">
+        <input type="button" class="button" value="3" onclick="incluirDigito('3')">
+        <input type="button" class="button" value="*" onclick="iniciarCalculo('*')">
+     
+
+        <input type="button" class="zero" value="0" onclick="incluirDigito('0')">
+        <input type="button" class="button" value="/" onclick="iniciarCalculo('/')">
+        <input type="button" class="button" value="C" onclick="clean()">
+        <input type="button" class="button" value="=" onclick="finalizarCalculo()">
+		
+		
+	</div>
+
+
+</body>
+<script>
+  var n1 = "0"
+  var operacao = 0
+  var n2 = ''
+  var mostrarNoDisplay = document.getElementById("idDisplay")
+
+  function incluirDigito(digito){
+	  if(operacao == 0){
+	  n2 = n2 + digito
+	  mostrarNoDisplay(n2)
+	  }else{
+	  if(n1 == '0'){
+		  n1 = digito
+	  }else{
+		  n1 += digito
+	  }	  
+       mostrarNoDisplay(n1)
+	  } 
+	 
+
+  }
+  
+
+</script>
+</html>
