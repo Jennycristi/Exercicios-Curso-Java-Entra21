@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>calculadora</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
 
-	<style>
-
-      body{
+     body{
 		font-family: sans-serif;
 	 }
 
@@ -30,7 +33,7 @@
 		background: rgb(208, 208, 208);
         margin-bottom: 15px;
         grid-column: 1 / -1;
- 	}
+	 }
        
     
 
@@ -45,12 +48,10 @@
         
 	 }
 
-	</style>
-
-</head>
+</style>
 <body>
 
-	<div id="idCalculator">
+    <div id="idCalculator">
 		<div id="idDisplay">0</div>
 		
 		<input type="button" class="button" value="7" onclick="incluirDigito('7')">
@@ -76,10 +77,10 @@
 		
 		
 	</div>
-
-
+    
 </body>
 <script>
+
   var n1 = "0"
   var operacao = 0
   var n2 = ''
@@ -100,7 +101,6 @@
 	 
 
   }
-  
 
 </script>
 </html>
